@@ -1,0 +1,370 @@
+:root {
+  --p1-color: #262626;
+  --p2-color: #595959;
+  --s1-color: #8C8C8C;
+  --s2-color: #404040;
+  --black-color: #0D0D0D;
+  --white-color: #F2F2F2;
+  --white-2-color: #D9D9D9;
+  --shadow: black;
+  --n1-color: #006B1E;
+  --text-color: black;
+  --bg-color: linear-gradient(45deg,var(--s2-color), var(--p1-color), var(--black-color),var(--s2-color));
+  --text-font-size: 1.8vh;
+  --header-font-size: 2.3vh;
+  --big-font-size: 10vh;
+  --text-weight: 400;
+  --bold-weight: 900;
+  --light-weight: 100;
+  --universal-gap: 2vh;
+  --universal-radius: 2vh;
+  --font-family: "Roboto", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  font-weight: var(--text-weight);
+  font-size: var(--text-font-size);
+  font-family: var(--font-family);
+  color: var(--text-color);
+}
+
+img, svg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@keyframes infiniteMarquee-ttb {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+@keyframes infiniteMarquee-ltr {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes bgAnimation {
+  to, from {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+.scrolled {
+  background: rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(1vh);
+          backdrop-filter: blur(1vh);
+  border-bottom: 0.3vh solid var(--shadow);
+  padding: 1vh !important;
+}
+.scrolled div {
+  color: var(--p1-color) !important;
+}
+
+body {
+  width: 100%;
+  height: 100dvh;
+  background: var(--bg-color);
+  background-size: 500% 500%;
+  animation: bgAnimation 10s infinite ease-in-out;
+}
+body #everything {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body #everything .navbar {
+  width: 90%;
+  position: fixed;
+  top: 2%;
+  z-index: 2;
+  display: flex;
+  place-self: center;
+  justify-content: space-between;
+}
+body #everything .navbar .logo {
+  font-family: var(--font-family);
+  font-size: var(--text-font-size);
+  color: var(--s1-color);
+}
+body #everything .navbar .home-btn {
+  width: 3vh;
+  height: 3vh;
+}
+body #everything .page {
+  margin-top: var(--universal-gap);
+  width: 90%;
+  height: 90%;
+}
+body #everything .page #home-page {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 100% 0;
+}
+body #everything .page #home-page .pc-contents {
+  grid-template-columns: 40% auto;
+  gap: var(--universal-gap);
+  display: grid;
+  width: 100%;
+  height: 100%;
+}
+body #everything .page #home-page .contacts {
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  gap: var(--universal-gap);
+  justify-content: space-between;
+}
+body #everything .page #home-page .contacts a {
+  width: 100%;
+  height: 100%;
+  border: var(--s2-color) 0.3vh solid;
+  border-radius: var(--universal-radius);
+  background: var(--bg-color);
+  background-size: 500% 500%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body #everything .page #home-page .contacts a img {
+  width: 50%;
+  height: 50%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+body #everything .page #home-page .long-Y {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: var(--s2-color) 0.3vh solid;
+  border-radius: var(--universal-radius);
+  overflow: hidden;
+  display: flex;
+  gap: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+body #everything .page #home-page .long-Y .gradient {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  box-shadow: inset 0vh 0vh 30vh var(--shadow);
+  background: linear-gradient(-45deg, var(--p1-color), transparent 20%, var(--black-color));
+}
+body #everything .page #home-page .long-Y .arts {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  white-space: nowrap;
+  justify-content: flex-start;
+  animation: infiniteMarquee-ttb 30s linear infinite;
+}
+body #everything .page #home-page .long-Y .arts img {
+  width: 100%;
+  height: 40vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  filter: grayscale(100%);
+}
+body #everything .page #home-page .divided-Y {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 100%;
+  grid-template-rows: 40% 40% auto;
+  gap: var(--universal-gap);
+}
+body #everything .page #home-page .divided-Y .digital-gallery, body #everything .page #home-page .divided-Y .painting {
+  border: var(--s2-color) 0.3vh solid;
+  border-radius: var(--universal-radius);
+}
+body #everything .page #home-page .divided-Y .digital-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(95deg, var(--black-color), var(--white-color));
+}
+body #everything .page #home-page .divided-Y .digital-gallery .big-text {
+  text-transform: uppercase;
+  width: auto;
+  font-size: var(--big-font-size);
+  font-weight: var(--bold-weight);
+}
+body #everything .page #home-page .divided-Y .digital-gallery .big-text .small-text {
+  width: auto;
+  text-transform: capitalize;
+  margin-bottom: -2vh;
+  font-size: var(--text-font-size);
+}
+body #everything .page #home-page .divided-Y .painting {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: none;
+  overflow: hidden;
+  width: 100%;
+}
+body #everything .page #home-page .divided-Y .painting .gradient {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  box-shadow: inset 0vh 0vh 30vh var(--shadow);
+  background: linear-gradient(-45deg, var(--p1-color), transparent 20%, var(--black-color));
+}
+body #everything .page #home-page .divided-Y .painting .arts {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  align-items: flex-start;
+  white-space: nowrap;
+  justify-content: flex-start;
+  animation: infiniteMarquee-ltr 30s linear infinite;
+}
+body #everything .page #home-page .divided-Y .painting .arts img {
+  width: 40vh;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  filter: grayscale(100%);
+}
+body #everything .page #home-page .divided-Y .contacts {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--universal-gap);
+  justify-content: space-between;
+}
+body #everything .page #home-page .divided-Y .contacts a {
+  width: 100%;
+  height: 100%;
+  border: var(--s2-color) 0.3vh solid;
+  border-radius: var(--universal-radius);
+  background: var(--bg-color);
+  background-size: 500% 500%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body #everything .page #home-page .divided-Y .contacts a img {
+  width: 50%;
+  height: 50%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+body #everything .page #art-page {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 80% auto;
+  border-radius: var(--universal-radius);
+  background: var(--white-2-color);
+  overflow: hidden;
+}
+body #everything .page #art-page .display {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2vh;
+}
+body #everything .page #art-page .display .art {
+  width: auto;
+  height: 90%;
+}
+body #everything .page #art-page .display .art img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+body #everything .page #art-page .carousel {
+  width: 100%;
+  height: 100%;
+  padding: 2vh;
+  white-space: nowrap;
+  gap: var(--universal-gap);
+  overflow-x: auto;
+  overflow-y: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  scroll-behavior: smooth;
+}
+body #everything .page #art-page .carousel img {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  filter: grayscale(100%);
+}
+body #everything .page #coming-soon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: var(--white-color);
+  font-size: var(--big-font-size);
+  font-weight: var(--bold-weight);
+}
+
+@media only screen and (max-width: 768px) {
+  :root {
+    --big-font-size: 3vh;
+  }
+  #home-page {
+    gap: var(--universal-gap);
+    grid-template-rows: 90% auto !important;
+  }
+  #home-page .divided-Y {
+    grid-template-rows: 50% auto !important;
+  }
+  #home-page .divided-Y .digital-gallery .big-text .small-text {
+    margin-bottom: -0.5vh !important;
+  }
+  #home-page .divided-Y .contacts {
+    display: none !important;
+  }
+  #home-page .contacts {
+    display: flex !important;
+  }
+  #art-page {
+    grid-template-rows: 80% auto !important;
+  }
+  #art-page .carousel img {
+    width: 50% !important;
+    height: 100% !important;
+    -o-object-fit: contain !important;
+       object-fit: contain !important;
+  }
+}/*# sourceMappingURL=index.css.map */
